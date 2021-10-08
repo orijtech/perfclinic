@@ -3,6 +3,7 @@ package makestyles
 import "testing"
 
 func makeIt(n int) (data []int) {
+	data = make([]int, 0, n)
 	for i := 0; i < n; i++ {
 		data = append(data, i)
 	}
