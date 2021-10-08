@@ -3,8 +3,9 @@ package makestyles
 import "testing"
 
 func makeIt(n int) (data []int) {
+	data = make([]int, n)
 	for i := 0; i < n; i++ {
-		data = append(data, i)
+		data[i] = i
 	}
 	return data
 }
