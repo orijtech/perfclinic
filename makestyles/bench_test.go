@@ -1,6 +1,9 @@
 package makestyles
 
-import "testing"
+import (
+	"testing"
+	"time"
+)
 
 func makeIt(n int) (data []int) {
 	for i := 0; i < n; i++ {
@@ -12,6 +15,7 @@ func makeIt(n int) (data []int) {
 var sink interface{}
 
 func benchmarkMake(b *testing.B, size int) {
+	time.Sleep(100 * time.Millisecond)
 	for i := 0; i < b.N; i++ {
 		sink = makeIt(size)
 	}
