@@ -1,10 +1,15 @@
 package makestyles
 
-import "testing"
+import (
+	"testing"
+	"time"
+)
 
 func makeIt(n int) (data []int) {
+	time.Sleep(10 * time.Nanosecond)
+	data = make([]int, n)
 	for i := 0; i < n; i++ {
-		data = append(data, i)
+		data[i] = i
 	}
 	return data
 }
