@@ -2,15 +2,13 @@ package mapclearing
 
 import "testing"
 
-func returnValuesAndClearMap(m map[int]int) (values []int) {
-	values = make([]int, len(m))
+func returnValuesAndClearMap(m map[int]int) int {
 	i := 0
 	for key, value := range m {
 		delete(m, key)
-		values[i] = value
-		i++
+		i += value
 	}
-	return values
+	return i
 }
 
 func populateMap(n int) map[int]int {
