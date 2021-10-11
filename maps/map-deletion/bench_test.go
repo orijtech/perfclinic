@@ -3,9 +3,12 @@ package mapclearing
 import "testing"
 
 func returnValuesAndClearMap(m map[int]int) (values []int) {
+	values = make([]int, len(m))
+	i := 0
 	for key, value := range m {
-		values = append(values, value)
 		delete(m, key)
+		values[i] = value
+		i++
 	}
 	return values
 }
