@@ -8,7 +8,7 @@ import (
 )
 
 func formatIt(b []byte) string {
-	return fmt.Sprintf("value: %s", string(b))
+	return fmt.Sprintf("value: %s", b)
 }
 
 var values = []struct {
