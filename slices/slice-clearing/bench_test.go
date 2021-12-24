@@ -8,10 +8,11 @@ type foo struct {
 
 func returnValuesAndClearSlice(f *foo) int {
 	tot := 0
-	for _, val := range f.data {
+	for i, val := range f.data {
+		f.data[i] = 0
 		tot += val
 	}
-	f.data = make([]int, len(f.data))
+
 	return tot
 }
 
