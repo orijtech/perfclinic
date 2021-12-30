@@ -53,9 +53,8 @@ func BenchmarkIt1000000(b *testing.B) {
 }
 
 func benchmarkIt(b *testing.B, n int) {
-	b.StopTimer()
 	m, bytesKeys := populateMap(n)
-	b.StartTimer()
+	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
 		sink = iterateMapAndReturnValues(m, bytesKeys)
 	}
