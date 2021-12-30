@@ -8,8 +8,7 @@ import (
 func iterateMapAndReturnValues(m map[string]int, bytesKeys [][]byte) int {
 	i := 0
 	for _, bytesKey := range bytesKeys {
-		key := string(bytesKey)
-		i += m[key]
+		i += m[string(bytesKey)]
 	}
 	return i
 }
