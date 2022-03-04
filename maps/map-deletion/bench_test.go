@@ -4,9 +4,14 @@ import "testing"
 
 func returnValuesAndClearMap(m map[int]int) int {
 	i := 0
-	for key, value := range m {
-		delete(m, key)
+	// 1. Just get the values.
+	for _, value := range m {
 		i += value
+	}
+
+	// 2. Use the map clearing idiom solely now.
+	for key := range m {
+		delete(m, key)
 	}
 	return i
 }
